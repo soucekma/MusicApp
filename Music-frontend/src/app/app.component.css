@@ -1,0 +1,33 @@
+a[routerLink] {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+  font-family: Verdana, serif;
+}
+
+.home-icon {
+  width: 30px;
+  height: 30px;
+
+}
+
+
+a[routerLink]:hover {
+  color: gray;
+}
+
+a[routerLink].active {
+  color: gray;
+}
+
+@media (max-width: 600px) {
+  a[routerLink] {
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+}

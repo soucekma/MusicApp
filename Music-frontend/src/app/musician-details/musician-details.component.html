@@ -1,0 +1,73 @@
+<div class="everything" *ngIf="musician">
+  <h1>{{ musician.name }}</h1>
+  <p><strong>Genre:</strong> {{ musician.genre }}</p>
+  <p><strong>Country:</strong> {{ musician.country }}</p>
+
+  <button class="add-button" [routerLink]="['/edit', musician.musician_id]">Edit</button>
+  <button class="delete-button" (click)="deleteMusician()">Delete Musician</button>
+
+  <h2>Albums</h2>
+  <ul *ngIf="albums.length > 0; else noAlbums">
+    <li *ngFor="let album of albums" class="album-item" (click)="editAlbum(album)">
+      <div class="album-details">
+        <div class="album-info">
+          <strong>{{ album.album_name }}</strong>
+          <span class="release-year">Released in {{ album.release_year }}</span>
+        </div>
+        <button class="add-button" (click)="editAlbum(album)">Edit</button>
+        <button class="delete-button" (click)="deleteAlbum(album.album_id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+  <ng-template #noAlbums>
+    <p>No albums available.</p>
+  </ng-template>
+
+  <button class="add-button" (click)="showAddAlbumForm = !showAddAlbumForm" *ngIf="!showAddAlbumForm">
+    Add New Album
+  </button>
+
+  <div *ngIf="showAddAlbumForm">
+    <h3>Add a New Album</h3>
+    <form (ngSubmit)="addAlbum()">
+      <label for="albumName">Album Name:</label>
+      <input id="albumName" [(ngModel)]="newAlbum.album_name" name="album_name" required />
+
+      <label for="releaseYear">Release Year:</label>
+      <input id="releaseYear" type="number" [(ngModel)]="newAlbum.release_year" name="release_year" required />
+
+      <div class="form-button-container">
+        <button class="add-button" type="submit">Add Album</button>
+        <button class="delete-button" type="button" (click)="showAddAlbumForm = false">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+
+  <div *ngIf="showEditAlbumForm">
+    <h3>Edit Album</h3>
+    <form (ngSubmit)="saveAlbum()">
+      <label for="editAlbumName">Album Name:</label>
+      <input
+        id="editAlbumName"
+        [(ngModel)]="albumToEdit!.album_name"
+        name="album_name"
+        required
+      />
+
+      <label for="editReleaseYear">Release Year:</label>
+      <input
+        id="editReleaseYear"
+        type="number"
+        [(ngModel)]="albumToEdit!.release_year"
+        name="release_year"
+        required
+      />
+      <div class="form-button-container">
+        <button class="add-button" type="submit">Save Changes</button>
+        <button class="delete-button" type="button" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

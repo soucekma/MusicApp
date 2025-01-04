@@ -1,0 +1,36 @@
+<div class="musician-management">
+  <div class="search-and-add-container">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+      placeholder="Search musicians..."
+      class="search-input"
+    />
+    <button class="add-button" [routerLink]="['/add']">Add New Musician</button>
+  </div>
+
+  <div class="musician-table-container">
+    <table class="musician-table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Genre</th>
+        <th>Country</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let musician of musicians" [routerLink]="['/details', musician.musician_id]">
+        <td>{{ musician.name }}</td>
+        <td>{{ musician.genre }}</td>
+        <td>{{ musician.country }}</td>
+        <td>
+          <button class="view-button" [routerLink]="['/details', musician.musician_id]">View Details</button>
+          <button class="edit-button" [routerLink]="['/edit', musician.musician_id]">Edit</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

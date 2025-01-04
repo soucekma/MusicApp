@@ -1,0 +1,99 @@
+
+.everything {
+  padding: 10px;
+  margin-top: 10px;
+  margin: 30px;
+  font-family: Verdana, serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+form label {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Verdana, serif;
+}
+
+button[type="submit"] {
+  background-color: #3c58e7;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #2e47c3;
+}
+
+button[type="button"] {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #c0392b;
+}
+
+button:focus {
+  outline: none;
+}
+
+h1 {
+  font-size: 1.6em;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  form input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+button {
+  display: inline-block;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+form .button-group {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+form .button-group button {
+  flex: 0;
+}
+

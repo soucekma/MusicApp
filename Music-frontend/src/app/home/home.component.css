@@ -1,0 +1,115 @@
+.musician-management {
+  padding: 20px;
+  margin: 30px;
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-family: Verdana, serif;
+}
+
+.search-and-add-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 8px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.add-button {
+  padding: 7px 15px;
+  background-color: #3c58e7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.93em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Verdana, serif;
+  margin-right: 210px;
+}
+
+.add-button:hover {
+  background-color: #2e47c3;
+}
+
+.musician-table-container {
+  overflow-x: auto;
+}
+
+.musician-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.musician-table th, .musician-table td {
+  text-align: left;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.musician-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.musician-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.view-button, .edit-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Verdana, serif;
+}
+
+.view-button {
+  background-color: #3c58e7;
+  color: white;
+}
+
+.edit-button {
+  background-color: #e74c3c;
+  color: white;
+  margin-left: 5px;
+}
+
+.view-button:hover {
+  background-color: #2e47c3;
+}
+
+.edit-button:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 600px) {
+  .musician-table {
+    font-size: 0.9rem;
+  }
+
+  .view-button, .edit-button {
+    font-size: 0.8rem;
+  }
+
+  .search-and-add-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .add-button {
+    margin-top: 10px;
+  }
+}
